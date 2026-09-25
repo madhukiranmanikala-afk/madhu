@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madhu Kiran Manikala | Certified Pega System Architect & Software Engineer</title>
+  <meta name="description" content="Portfolio of Madhu Kiran Manikala - Certified Pega System Architect (CSA), Software Engineer, and B.Tech graduate skilled in Pega, Java, Networking, and Cybersecurity.">
+  <meta name="keywords" content="Madhu Kiran Manikala, Pega System Architect, CSA, Portfolio, Software Engineer, Vishnu Institute of Technology, Java Developer">
+  <meta name="author" content="Madhu Kiran Manikala">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Interactive Particle Background Canvas -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Glow Blobs -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="site-header" id="header">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="Madhu Kiran Manikala Home">
+        <div class="logo-badge">
+          <span class="logo-initials">MM</span>
+          <span class="logo-ring"></span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Madhu Kiran</span>
+          <span class="brand-sub">System Architect</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#certifications" class="nav-link">Certificates</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#accomplishments" class="nav-link">Impact</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Utilities -->
+      <div class="header-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle light or dark theme" title="Toggle theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Resume Modal Trigger -->
+        <button class="btn btn-outline btn-sm resume-btn" id="open-resume-btn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          <span>Resume</span>
+        </button>
+
+        <a href="#contact" class="btn btn-primary btn-sm hire-btn">Connect</a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-toggle" class="icon-btn mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Nav -->
+    <div class="mobile-nav" id="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#certifications" class="mobile-nav-link">Certificates</a></li>
+        <li><a href="#education" class="mobile-nav-link">Education</a></li>
+        <li><a href="#accomplishments" class="mobile-nav-link">Accomplishments</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        <li class="mobile-actions">
+          <button class="btn btn-outline w-full" id="mobile-resume-btn">View Resume</button>
+          <a href="#contact" class="btn btn-primary w-full mobile-nav-link">Get In Touch</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>Available for New Roles & Engineering Challenges</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Madhu Kiran</span><br>
+            <span class="name-surname">Manikala</span>
+          </h1>
+
+          <div class="hero-role-wrapper">
+            <span class="role-prefix">Specialized in: </span>
+            <span class="typewriter-text" id="typewriter"></span>
+            <span class="cursor-blink">|</span>
+          </div>
+
+          <p class="hero-desc">
+            Certified Pega System Architect (CSA) &amp; B.Tech Graduate passionate about designing scalable enterprise workflows, business process automation, robust Java systems, and resilient network architectures.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn btn-primary btn-lg">
+              <span>Let's Connect</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#certifications" class="btn btn-glass btn-lg">
+              <span>View Certifications</span>
+            </a>
+          </div>
+
+          <!-- Quick Stats Banner -->
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-number">CSA</span>
+              <span class="stat-label">Certified Pega Architect</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <span class="stat-number">4+</span>
+              <span class="stat-label">Industry Certifications</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <span class="stat-number">B.Tech</span>
+              <span class="stat-label">Vishnu Inst. of Tech</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual / 3D Holographic Card -->
+        <div class="hero-visual">
+          <div class="card-glow-wrapper" id="hero-card">
+            <div class="hologram-card">
+              <div class="hologram-inner">
+                <!-- Monogram Avatar -->
+                <div class="avatar-ring-container">
+                  <div class="avatar-radar"></div>
+                  <div class="avatar-core">
+                    <span class="avatar-letters">MM</span>
+                  </div>
+                  <div class="orbit-badge orbit-1" title="Certified Pega System Architect">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                      <polyline points="2 17 12 22 22 17"></polyline>
+                      <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    <span>PEGA CSA</span>
+                  </div>
+                  <div class="orbit-badge orbit-2" title="Java Development">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M16.5 9.4 7.55 4.24a1.78 1.78 0 0 0-2.5 1.55v12.42a1.78 1.78 0 0 0 2.5 1.55L16.5 14.6a1.78 1.78 0 0 0 0-3.2z"></path>
+                    </svg>
+                    <span>JAVA</span>
+                  </div>
+                  <div class="orbit-badge orbit-3" title="Cyber Security & Linux">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <span>SECURITY</span>
+                  </div>
+                </div>
+
+                <div class="card-meta">
+                  <h3 class="meta-name">Madhu Kiran Manikala</h3>
+                  <p class="meta-title">Enterprise System Architect</p>
+                  
+                  <div class="meta-chips">
+                    <span class="chip"><i class="dot"></i> Eluru, AP, India</span>
+                    <span class="chip"><i class="dot active"></i> Open to Relocate</span>
+                  </div>
+
+                  <div class="meta-contacts-preview">
+                    <a href="mailto:Madhukiranmanikala@gmail.com" class="meta-link" title="Send Email">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                      <span>Madhukiranmanikala@gmail.com</span>
+                    </a>
+                    <a href="tel:9505807632" class="meta-link" title="Call">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                      <span>+91 9505807632</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">Professional Overview</div>
+          <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+          <p class="section-desc">Passionate engineer with high learning velocity, enterprise architecture skills, and a commitment to precision.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Profile Narrative -->
+          <div class="about-card glass-panel">
+            <div class="card-icon-header">
+              <div class="icon-circle">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <h3 class="panel-heading">Executive Profile</h3>
+            </div>
+            
+            <p class="panel-text">
+              Highly-motivated technical professional with an ardent desire to conquer new challenges. Equipped with a strong work ethic, rapid adaptability, and exceptional interpersonal skills. Proven ability to work effectively unsupervised and quickly master cutting-edge tools and frameworks.
+            </p>
+
+            <div class="career-goal-box">
+              <div class="goal-label">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                <span>Career Vision</span>
+              </div>
+              <blockquote class="goal-quote">
+                "To leverage academic achievements, certified Pega system architecture expertise, and hands-on technological experience to build enterprise solutions and continually master new skills in a progressive professional environment."
+              </blockquote>
+            </div>
+
+            <!-- Strengths List -->
+            <div class="strengths-wrapper">
+              <h4 class="sub-heading">Core Strengths</h4>
+              <div class="strength-tags">
+                <span class="tag-badge"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> High Work Ethic</span>
+                <span class="tag-badge"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Rapid Adaptability</span>
+                <span class="tag-badge"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Critical Thinking</span>
+                <span class="tag-badge"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Strong Teamwork</span>
+                <span class="tag-badge"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Eagerness to Learn</span>
+                <span class="tag-badge"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Problem Solving</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Languages & Hobbies Panels -->
+          <div class="about-side-stack">
+            <!-- Language Proficiency -->
+            <div class="glass-panel language-panel">
+              <div class="card-icon-header">
+                <div class="icon-circle">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                </div>
+                <h3 class="panel-heading">Languages &amp; Proficiency</h3>
+              </div>
+
+              <div class="language-bars">
+                <!-- Telugu -->
+                <div class="lang-item">
+                  <div class="lang-header">
+                    <span class="lang-name">Telugu</span>
+                    <span class="lang-level native">Native (First Language)</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="width: 100%;"></div>
+                  </div>
+                </div>
+
+                <!-- English -->
+                <div class="lang-item">
+                  <div class="lang-header">
+                    <span class="lang-name">English</span>
+                    <span class="lang-level cefr">Advanced (C1 CEFR)</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="width: 88%;"></div>
+                  </div>
+                </div>
+
+                <!-- Hindi -->
+                <div class="lang-item">
+                  <div class="lang-header">
+                    <span class="lang-name">Hindi</span>
+                    <span class="lang-level cefr">Intermediate (B1 CEFR)</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="width: 65%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hobbies & Personal Interests -->
+            <div class="glass-panel hobbies-panel">
+              <div class="card-icon-header">
+                <div class="icon-circle">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <h3 class="panel-heading">Hobbies &amp; Interests</h3>
+              </div>
+
+              <div class="hobbies-grid">
+                <div class="hobby-item">
+                  <span class="hobby-icon">✍️</span>
+                  <span>Writing</span>
+                </div>
+                <div class="hobby-item">
+                  <span class="hobby-icon">🌐</span>
+                  <span>Languages</span>
+                </div>
+                <div class="hobby-item">
+                  <span class="hobby-icon">📸</span>
+                  <span>Photography</span>
+                </div>
+                <div class="hobby-item">
+                  <span class="hobby-icon">✈️</span>
+                  <span>Travelling</span>
+                </div>
+                <div class="hobby-item">
+                  <span class="hobby-icon">⚽</span>
+                  <span>Doing Sports</span>
+                </div>
+                <div class="hobby-item">
+                  <span class="hobby-icon">📚</span>
+                  <span>Reading</span>
+                </div>
+                <div class="hobby-item">
+                  <span class="hobby-icon">🎨</span>
+                  <span>Art</span>
+                </div>
+                <div class="hobby-item">
+                  <span class="hobby-icon">🕺</span>
+                  <span>Dance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS MATRIX SECTION -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">Technical Competencies</div>
+          <h2 class="section-title">Skills &amp; <span class="gradient-text">Domain Knowledge</span></h2>
+          <p class="section-desc">From certified enterprise workflow architecture to programming, networking, and analytical tools.</p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-controls" role="tablist">
+          <button class="filter-btn active" data-filter="all" role="tab">All Skills</button>
+          <button class="filter-btn" data-filter="pega" role="tab">Pega Architecture</button>
+          <button class="filter-btn" data-filter="dev" role="tab">Programming &amp; Systems</button>
+          <button class="filter-btn" data-filter="tools" role="tab">Productivity &amp; Tools</button>
+          <button class="filter-btn" data-filter="soft" role="tab">Analytical &amp; Soft</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skills-container">
+          <!-- Pega System Architect -->
+          <div class="skill-card featured-skill" data-category="pega">
+            <div class="skill-badge-label">Primary Specialization</div>
+            <div class="skill-card-top">
+              <div class="skill-icon-box pega-gradient">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="skill-title-meta">
+                <h3 class="skill-title">Pega System Architect</h3>
+                <span class="skill-level">Certified CSA</span>
+              </div>
+            </div>
+            <p class="skill-desc">
+              Designing case management workflows, rule resolution, data modeling, flow action rules, decision tables, UI harnesses, and integration rules in Pega PRPC.
+            </p>
+            <div class="skill-pill-group">
+              <span class="pill">Case Design</span>
+              <span class="pill">Rule Resolution</span>
+              <span class="pill">Data Modeling</span>
+              <span class="pill">Pega Policies</span>
+            </div>
+          </div>
+
+          <!-- Java Programming -->
+          <div class="skill-card" data-category="dev">
+            <div class="skill-card-top">
+              <div class="skill-icon-box">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+              </div>
+              <div class="skill-title-meta">
+                <h3 class="skill-title">Java Programming</h3>
+                <span class="skill-level">Core &amp; OOP</span>
+              </div>
+            </div>
+            <p class="skill-desc">
+              Strong grasp of Object-Oriented Programming (OOP), inheritance, interfaces, collections framework, exception handling, and algorithm fundamentals.
+            </p>
+            <div class="skill-pill-group">
+              <span class="pill">Core Java</span>
+              <span class="pill">OOP</span>
+              <span class="pill">Collections</span>
+              <span class="pill">Data Structures</span>
+            </div>
+          </div>
+
+          <!-- Linux in Networking -->
+          <div class="skill-card" data-category="dev">
+            <div class="skill-card-top">
+              <div class="skill-icon-box">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <div class="skill-title-meta">
+                <h3 class="skill-title">Linux &amp; Networking</h3>
+                <span class="skill-level">Systems &amp; CLI</span>
+              </div>
+            </div>
+            <p class="skill-desc">
+              Linux command-line environment, network configuration (ip, ifconfig, netstat), SSH, socket communication, file permissions, and process management.
+            </p>
+            <div class="skill-pill-group">
+              <span class="pill">Linux CLI</span>
+              <span class="pill">TCP/IP</span>
+              <span class="pill">Socket Config</span>
+              <span class="pill">Shell Tools</span>
+            </div>
+          </div>
+
+          <!-- Technical Writing -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-card-top">
+              <div class="skill-icon-box">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+              </div>
+              <div class="skill-title-meta">
+                <h3 class="skill-title">Technical Writing</h3>
+                <span class="skill-level">Documentation</span>
+              </div>
+            </div>
+            <p class="skill-desc">
+              Drafting clear software specifications, process documentation, system architecture flowcharts, and client-ready technical deliverables.
+            </p>
+            <div class="skill-pill-group">
+              <span class="pill">System Docs</span>
+              <span class="pill">Process Maps</span>
+              <span class="pill">Flowcharts</span>
+            </div>
+          </div>
+
+          <!-- Microsoft Excel & Analysis -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-card-top">
+              <div class="skill-icon-box">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 20V10M12 20V4M6 20v-6"></path>
+                </svg>
+              </div>
+              <div class="skill-title-meta">
+                <h3 class="skill-title">Microsoft Excel &amp; Word</h3>
+                <span class="skill-level">Productivity Suite</span>
+              </div>
+            </div>
+            <p class="skill-desc">
+              Advanced data formatting, VLOOKUP/XLOOKUP, pivot tables, chart visualizations, report compilation, and polished executive documentation.
+            </p>
+            <div class="skill-pill-group">
+              <span class="pill">Formulas</span>
+              <span class="pill">Data Analysis</span>
+              <span class="pill">Pivot Tables</span>
+              <span class="pill">MS Word</span>
+            </div>
+          </div>
+
+          <!-- Critical Thinking & Decision Making -->
+          <div class="skill-card" data-category="soft">
+            <div class="skill-card-top">
+              <div class="skill-icon-box">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+              </div>
+              <div class="skill-title-meta">
+                <h3 class="skill-title">Critical &amp; Creative Thinking</h3>
+                <span class="skill-level">Problem Solving</span>
+              </div>
+            </div>
+            <p class="skill-desc">
+              Diagnosing complex systemic bottlenecks, evaluating architectural trade-offs, and developing innovative solutions under tight deadlines.
+            </p>
+            <div class="skill-pill-group">
+              <span class="pill">Decision Making</span>
+              <span class="pill">Time Management</span>
+              <span class="pill">Root Cause Analysis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section class="section cert-section" id="certifications">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">Credentials &amp; Training</div>
+          <h2 class="section-title">Industry <span class="gradient-text">Certifications</span></h2>
+          <p class="section-desc">Verified credentials reflecting rigorous training in enterprise architecture, cyber security, and artificial intelligence.</p>
+        </div>
+
+        <div class="certs-grid">
+          <!-- Cert 1: Pega CSA -->
+          <div class="cert-card gold-border">
+            <div class="cert-badge-ribbon">⭐ CSA Verified</div>
+            <div class="cert-header">
+              <div class="cert-logo-box pega-logo-bg">
+                <span class="cert-short">CSA</span>
+              </div>
+              <div class="cert-title-area">
+                <h3 class="cert-name">Certified Pega System Architect</h3>
+                <p class="cert-issuer">Pegasystems</p>
+              </div>
+            </div>
+            <p class="cert-description">
+              Demonstrates mastery in building Pega enterprise applications, implementing case management lifecycle, configuring data models, UI portals, validation, and automated decision strategies.
+            </p>
+            <div class="cert-skills-list">
+              <span class="badge-mini">Pega PRPC</span>
+              <span class="badge-mini">Rule Resolution</span>
+              <span class="badge-mini">Case Lifecycle</span>
+              <span class="badge-mini">Data Propagation</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-status verified">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Certified Professional
+              </span>
+            </div>
+          </div>
+
+          <!-- Cert 2: AICTE AI & ML -->
+          <div class="cert-card">
+            <div class="cert-header">
+              <div class="cert-logo-box ai-logo-bg">
+                <span class="cert-short">AI</span>
+              </div>
+              <div class="cert-title-area">
+                <h3 class="cert-name">AI &amp; Machine Learning</h3>
+                <p class="cert-issuer">AICTE Government of India</p>
+              </div>
+            </div>
+            <p class="cert-description">
+              Comprehensive training covering foundational concepts of Artificial Intelligence, Machine Learning algorithms, predictive analytics, and data pipeline preparation.
+            </p>
+            <div class="cert-skills-list">
+              <span class="badge-mini">Machine Learning</span>
+              <span class="badge-mini">Data Workflows</span>
+              <span class="badge-mini">Supervised Learning</span>
+              <span class="badge-mini">AI Fundamentals</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-status verified">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                AICTE Accredited
+              </span>
+            </div>
+          </div>
+
+          <!-- Cert 3: CISCO Cyber Security -->
+          <div class="cert-card">
+            <div class="cert-header">
+              <div class="cert-logo-box cisco-logo-bg">
+                <span class="cert-short">SEC</span>
+              </div>
+              <div class="cert-title-area">
+                <h3 class="cert-name">Cyber Security</h3>
+                <p class="cert-issuer">CISCO Networking Academy</p>
+              </div>
+            </div>
+            <p class="cert-description">
+              Rigorous grounding in network defense, cybersecurity principles, cryptography basics, threat vectors identification, firewall concepts, and confidentiality safeguarding.
+            </p>
+            <div class="cert-skills-list">
+              <span class="badge-mini">Network Security</span>
+              <span class="badge-mini">Threat Detection</span>
+              <span class="badge-mini">CISCO Standards</span>
+              <span class="badge-mini">Cyber Defense</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-status verified">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                CISCO Certified
+              </span>
+            </div>
+          </div>
+
+          <!-- Cert 4: Networking & Linux -->
+          <div class="cert-card">
+            <div class="cert-header">
+              <div class="cert-logo-box net-logo-bg">
+                <span class="cert-short">NET</span>
+              </div>
+              <div class="cert-title-area">
+                <h3 class="cert-name">Networking &amp; Linux Training</h3>
+                <p class="cert-issuer">Professional Network Academy</p>
+              </div>
+            </div>
+            <p class="cert-description">
+              In-depth hands-on training with Linux networking stack, TCP/IP protocol suite, subnetting, network troubleshooting commands, and client-server connectivity.
+            </p>
+            <div class="cert-skills-list">
+              <span class="badge-mini">Linux Network Stack</span>
+              <span class="badge-mini">TCP/IP &amp; DNS</span>
+              <span class="badge-mini">Subnetting</span>
+              <span class="badge-mini">Diagnostic Utilities</span>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-status verified">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Training Completed
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION TIMELINE -->
+    <section class="section edu-section" id="education">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">Academic Pathway</div>
+          <h2 class="section-title">Education &amp; <span class="gradient-text">Qualifications</span></h2>
+          <p class="section-desc">Consistent academic track record across engineering and pre-university programs.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- B.Tech -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-head">
+                <span class="timeline-period">01/2024 Graduation</span>
+                <span class="grade-badge">GPA: 7.18 / 10</span>
+              </div>
+              <h3 class="degree-title">Bachelor of Technology (B.Tech)</h3>
+              <h4 class="institute-name">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Vishnu Institute of Technology — Bhimavaram, India
+              </h4>
+              <p class="timeline-summary">
+                Completed comprehensive engineering coursework emphasizing software development, enterprise systems, data structures, algorithms, and technical project execution.
+              </p>
+              <div class="timeline-tags">
+                <span class="t-tag">Computer Systems</span>
+                <span class="t-tag">Software Engineering</span>
+                <span class="t-tag">Enterprise Architecture</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Intermediate -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-head">
+                <span class="timeline-period">01/2020 Completion</span>
+                <span class="grade-badge highlight-grade">GPA: 8.3 / 10</span>
+              </div>
+              <h3 class="degree-title">Intermediate (10+2 / Pre-University)</h3>
+              <h4 class="institute-name">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                AKRG Junior College — Nallajerla, India
+              </h4>
+              <p class="timeline-summary">
+                Focused on Mathematics, Physics, and Chemistry (MPC), building analytical problem-solving and quantitative reasoning capabilities.
+              </p>
+              <div class="timeline-tags">
+                <span class="t-tag">Mathematics</span>
+                <span class="t-tag">Physics</span>
+                <span class="t-tag">Analytical Aptitude</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SSC -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-head">
+                <span class="timeline-period">01/2018 Completion</span>
+                <span class="grade-badge distinction-grade">GPA: 9.3 / 10 (Distinction)</span>
+              </div>
+              <h3 class="degree-title">Secondary School Certificate (SSC / 10th)</h3>
+              <h4 class="institute-name">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Ramakrishna EM High School — Pothavaram, India
+              </h4>
+              <p class="timeline-summary">
+                Achieved top academic distinction (9.3 GPA), demonstrating exceptional discipline, foundational excellence, and communication skills.
+              </p>
+              <div class="timeline-tags">
+                <span class="t-tag">High Distinction</span>
+                <span class="t-tag">Academic Excellence</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY ACCOMPLISHMENTS -->
+    <section class="section accomplishments-section" id="accomplishments">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">Value &amp; Impact</div>
+          <h2 class="section-title">Key <span class="gradient-text">Accomplishments</span></h2>
+          <p class="section-desc">Delivering tangible improvements in quality, efficiency, and enterprise architecture.</p>
+        </div>
+
+        <div class="accomplishments-container">
+          <div class="featured-impact-card glass-panel">
+            <div class="impact-icon-badge">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <div class="impact-content">
+              <span class="impact-kicker">PEGA Systems Policy Optimization</span>
+              <h3 class="impact-title">Exceeding Quality &amp; Production Targets via Critical Thinking</h3>
+              <p class="impact-detail">
+                "Created and developed critical thinking frameworks in PEGA policies to consistently exceed quality benchmarks and production targets."
+              </p>
+              <div class="impact-metrics-row">
+                <div class="metric-box">
+                  <span class="metric-val">100%</span>
+                  <span class="metric-desc">Target Quality Adherence</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-val">PEGA PRPC</span>
+                  <span class="metric-desc">Certified Architecture Rules</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-val">Enterprise</span>
+                  <span class="metric-desc">Process Reliability</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">Get in Touch</div>
+          <h2 class="section-title">Let's Build Something <span class="gradient-text">Great</span></h2>
+          <p class="section-desc">Have an opening, enterprise project, or collaboration? My inbox is always open.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Cards -->
+          <div class="contact-info-col">
+            <div class="contact-card glass-panel">
+              <div class="contact-card-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-card-content">
+                <span class="contact-label">Email Address</span>
+                <a href="mailto:Madhukiranmanikala@gmail.com" class="contact-value" id="email-text">Madhukiranmanikala@gmail.com</a>
+              </div>
+              <button class="copy-btn icon-btn" data-copy="Madhukiranmanikala@gmail.com" title="Copy Email">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+
+            <div class="contact-card glass-panel">
+              <div class="contact-card-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-card-content">
+                <span class="contact-label">Phone &amp; WhatsApp</span>
+                <a href="tel:9505807632" class="contact-value" id="phone-text">+91 9505807632</a>
+              </div>
+              <button class="copy-btn icon-btn" data-copy="9505807632" title="Copy Phone Number">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+
+            <div class="contact-card glass-panel">
+              <div class="contact-card-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-card-content">
+                <span class="contact-label">Current Location</span>
+                <span class="contact-value">Eluru, Andhra Pradesh 534451, India</span>
+              </div>
+            </div>
+
+            <!-- Quick Action Box -->
+            <div class="glass-panel resume-cta-card">
+              <h4 class="resume-cta-title">Looking for Madhu's Complete Profile?</h4>
+              <p class="resume-cta-text">Review and print my complete verified resume or reach out directly.</p>
+              <div class="resume-actions-group">
+                <button class="btn btn-primary btn-sm" id="cta-view-resume">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                  <span>Open Full Resume</span>
+                </button>
+                <a href="mailto:Madhukiranmanikala@gmail.com?subject=Job%20Opportunity%20for%20Madhu%20Kiran%20Manikala" class="btn btn-outline btn-sm">
+                  <span>Send Direct Email</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="contact-form-col">
+            <form id="contact-form" class="glass-panel form-panel" novalidate>
+              <h3 class="form-title">Send a Direct Message</h3>
+              <p class="form-subtitle">Fill out the form below and I'll get back to you promptly.</p>
+
+              <div class="form-group">
+                <label for="name">Your Full Name <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <input type="text" id="name" name="name" placeholder="e.g. John Doe or HR Recruiter" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email Address <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <input type="email" id="email" name="email" placeholder="e.g. recruiter@company.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <div class="input-wrapper">
+                  <input type="text" id="subject" name="subject" placeholder="e.g. Opportunity for Pega System Architect">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <textarea id="message" name="message" rows="4" placeholder="Hello Madhu, I would like to discuss an opportunity..." required></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-full submit-btn" id="submit-btn">
+                <span>Send Message</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+
+              <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <div class="logo-badge mini">
+            <span class="logo-initials">MM</span>
+          </div>
+          <span class="brand-name">Madhu Kiran Manikala</span>
+        </div>
+        <p class="footer-tagline">Certified Pega System Architect (CSA) &bull; Software Engineer</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; <span id="current-year"></span> Madhu Kiran Manikala. All rights reserved.</p>
+        <a href="#hero" class="back-to-top" aria-label="Back to top of page">
+          <span>Top</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RESUME MODAL / PRINTABLE SHEET -->
+  <div class="modal-backdrop" id="resume-modal" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title" hidden>
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="resume-modal-title" class="modal-title">Madhu Kiran Manikala &mdash; Curriculum Vitae</h3>
+        <div class="modal-actions">
+          <button class="btn btn-primary btn-sm" id="print-resume-btn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            <span>Print / Save PDF</span>
+          </button>
+          <button class="modal-close-btn" id="close-resume-btn" aria-label="Close resume modal">&times;</button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="resume-sheet" id="printable-resume">
+          <!-- Resume Header -->
+          <header class="sheet-header">
+            <div class="sheet-title-col">
+              <div class="sheet-monogram">MM</div>
+              <div>
+                <h1 class="sheet-name">MADHU KIRAN MANIKALA</h1>
+                <p class="sheet-tag">Certified Pega System Architect (CSA) &bull; Software Engineer</p>
+              </div>
+            </div>
+            <div class="sheet-contact-col">
+              <p>Eluru, Andhra Pradesh 534451, India</p>
+              <p>Email: <a href="mailto:Madhukiranmanikala@gmail.com">Madhukiranmanikala@gmail.com</a></p>
+              <p>Phone: +91 9505807632</p>
+            </div>
+          </header>
+
+          <hr class="sheet-divider">
+
+          <!-- Section: Profile -->
+          <section class="sheet-section">
+            <h2 class="sheet-sec-heading">PROFILE</h2>
+            <p>
+              Highly-motivated employee with desire to take on new challenges. Strong work ethic, adaptability, and exceptional interpersonal skills. Adept at working effectively unsupervised and quickly mastering new skills.
+            </p>
+          </section>
+
+          <!-- Section: Skills -->
+          <section class="sheet-section">
+            <h2 class="sheet-sec-heading">SKILLS</h2>
+            <div class="sheet-skills-columns">
+              <ul class="sheet-list">
+                <li><strong>Pega System Architect</strong> (CSA Certified)</li>
+                <li><strong>Java Programming</strong> (OOP, Collections, Core Fundamentals)</li>
+                <li><strong>Linux in Networking</strong> (CLI, TCP/IP, Configuration)</li>
+                <li><strong>Technical Writing</strong> &amp; Documentation</li>
+              </ul>
+              <ul class="sheet-list">
+                <li><strong>Microsoft Excel &amp; Word</strong> (Advanced Reporting)</li>
+                <li><strong>Creative Thinking &amp; Time Management</strong></li>
+                <li><strong>Decision Making &amp; Critical Thinking</strong></li>
+                <li><strong>Team Collaboration &amp; Communication</strong></li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Section: Education -->
+          <section class="sheet-section">
+            <h2 class="sheet-sec-heading">EDUCATION</h2>
+            <div class="sheet-entry">
+              <div class="sheet-entry-head">
+                <span class="sheet-entry-title">Bachelor of Technology (B.Tech)</span>
+                <span class="sheet-entry-date">01/2024</span>
+              </div>
+              <div class="sheet-entry-sub">Vishnu Institute of Technology &mdash; Bhimavaram, India</div>
+              <div class="sheet-entry-grade"><strong>GPA: 7.18 / 10</strong></div>
+            </div>
+
+            <div class="sheet-entry">
+              <div class="sheet-entry-head">
+                <span class="sheet-entry-title">Intermediate (Pre-University / 10+2)</span>
+                <span class="sheet-entry-date">01/2020</span>
+              </div>
+              <div class="sheet-entry-sub">AKRG Junior College &mdash; Nallajerla, India</div>
+              <div class="sheet-entry-grade"><strong>GPA: 8.3 / 10</strong></div>
+            </div>
+
+            <div class="sheet-entry">
+              <div class="sheet-entry-head">
+                <span class="sheet-entry-title">Secondary School Certificate (SSC / 10th)</span>
+                <span class="sheet-entry-date">01/2018</span>
+              </div>
+              <div class="sheet-entry-sub">Ramakrishna EM High School &mdash; Pothavaram, India</div>
+              <div class="sheet-entry-grade"><strong>GPA: 9.3 / 10 (Distinction)</strong></div>
+            </div>
+          </section>
+
+          <!-- Section: Certificates -->
+          <section class="sheet-section">
+            <h2 class="sheet-sec-heading">CERTIFICATES &amp; CREDENTIALS</h2>
+            <ul class="sheet-list">
+              <li><strong>Certified Pega System Architect (CSA)</strong> &mdash; Pegasystems Official Certification</li>
+              <li><strong>AICTE</strong> &mdash; Artificial Intelligence and Machine Learning</li>
+              <li><strong>CISCO</strong> &mdash; Cyber Security Fundamentals &amp; Network Defense</li>
+              <li><strong>Networking and Training</strong> &mdash; Networking Protocols &amp; Infrastructure</li>
+              <li><strong>LINUX in Networking</strong> &mdash; Linux Administration &amp; Socket Networking</li>
+            </ul>
+          </section>
+
+          <!-- Section: Languages -->
+          <section class="sheet-section">
+            <h2 class="sheet-sec-heading">LANGUAGES</h2>
+            <div class="sheet-lang-row">
+              <span><strong>Telugu:</strong> First Language (Native)</span>
+              <span><strong>English:</strong> Advanced (C1)</span>
+              <span><strong>Hindi:</strong> Intermediate (B1)</span>
+            </div>
+          </section>
+
+          <!-- Section: Accomplishments -->
+          <section class="sheet-section">
+            <h2 class="sheet-sec-heading">ACCOMPLISHMENTS</h2>
+            <ul class="sheet-list">
+              <li>Created and developed critical thinking in PEGA policies to consistently exceed quality and production targets.</li>
+            </ul>
+          </section>
+
+          <!-- Section: Career Goals & Strengths -->
+          <section class="sheet-section">
+            <h2 class="sheet-sec-heading">CAREER GOALS &amp; STRENGTHS</h2>
+            <p><strong>Career Goal:</strong> "To leverage my academic achievements and internship experiences to gain practical experience and develop new skills in a professional environment."</p>
+            <p><strong>Strengths:</strong> Strong work ethic, eagerness to learn, adaptability, and strong communication and teamwork skills.</p>
+            <p><strong>Hobbies &amp; Interests:</strong> Writing, Learning Languages, Photography, Travelling, Doing Sports, Reading, Art, Dance.</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-icon">✓</div>
+    <div class="toast-message" id="toast-message">Copied to clipboard!</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
