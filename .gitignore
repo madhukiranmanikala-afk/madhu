@@ -1,0 +1,8 @@
+# Python bytecode (bundled with the ui-ux-pro-max skill scripts)
+__pycache__/
+*.py[cod]
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini

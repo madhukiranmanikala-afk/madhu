@@ -16,7 +16,8 @@
 
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  /* #64748b only reached 3.98:1 on the navy background */
+  --text-muted: #94a3b8;
   --text-heading: #ffffff;
 
   /* Brand Accents */
@@ -34,6 +35,9 @@
   --accent-amber: #f59e0b;
 
   --gradient-brand: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #06b6d4 100%);
+  /* Buttons paint white label text on this ramp, so its stops must clear 4.5:1.
+     --gradient-brand stays bright for decorative gradient text and borders. */
+  --gradient-btn: linear-gradient(135deg, #7c3aed 0%, #4f46e5 55%, #0e7490 100%);
   --gradient-gold: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
   --gradient-glow: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 70%);
 
@@ -58,25 +62,94 @@
   --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Light Mode Overrides */
+/* Light Mode Overrides
+   The accent ramp below is deliberately darker than the dark theme. Bright
+   cyan/emerald/amber text that reads well on navy is unreadable on white, so
+   each accent steps down to its 700 shade to clear WCAG AA on #ffffff. */
 [data-theme="light"] {
-  --bg-primary: #f8fafc;
-  --bg-secondary: #f1f5f9;
-  --bg-surface: rgba(255, 255, 255, 0.85);
+  --bg-primary: #ffffff;
+  --bg-secondary: #f6f7f9;
+  --bg-surface: rgba(255, 255, 255, 0.9);
   --bg-surface-elevated: #ffffff;
-  --bg-glass: rgba(255, 255, 255, 0.75);
-  --border-color: rgba(0, 0, 0, 0.09);
-  --border-color-hover: rgba(139, 92, 246, 0.45);
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --border-color: rgba(15, 23, 42, 0.12);
+  --border-color-hover: rgba(139, 92, 246, 0.5);
 
   --text-primary: #0f172a;
   --text-secondary: #475569;
-  --text-muted: #64748b;
-  --text-heading: #090d16;
+  --text-muted: #475569;
+  --text-heading: #0b1120;
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.12);
-  --shadow-glow: 0 0 25px rgba(139, 92, 246, 0.18);
+  --primary-light: #6d28d9;
+  --secondary-light: #0e7490;
+  --accent-emerald: #047857;
+  --accent-amber: #b45309;
+
+  /* Gradient carries white button text, so every stop must clear 4.5:1 */
+  --gradient-brand: linear-gradient(135deg, #7c3aed 0%, #4f46e5 50%, #0e7490 100%);
+  --gradient-btn: linear-gradient(135deg, #7c3aed 0%, #4f46e5 55%, #0e7490 100%);
+
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px -4px rgba(15, 23, 42, 0.1);
+  --shadow-lg: 0 16px 36px -6px rgba(15, 23, 42, 0.14);
+  --shadow-glow: 0 0 25px rgba(139, 92, 246, 0.16);
+}
+
+/* Surfaces that relied on translucent white fills need a light tint on a white
+   page, otherwise pills, chips and tracks become invisible. */
+[data-theme="light"] .pill,
+[data-theme="light"] .badge-mini,
+[data-theme="light"] .t-tag,
+[data-theme="light"] .chip {
+  background: rgba(15, 23, 42, 0.04);
+}
+
+[data-theme="light"] .progress-track {
+  background: rgba(15, 23, 42, 0.1);
+}
+
+[data-theme="light"] .btn-glass:hover {
+  background: rgba(139, 92, 246, 0.08);
+}
+
+[data-theme="light"] .skill-icon-box,
+[data-theme="light"] .metric-box,
+[data-theme="light"] .tag-badge,
+[data-theme="light"] .hobby-item {
+  background: rgba(15, 23, 42, 0.03);
+}
+
+/* Coloured glows wash out on white, so soften them */
+[data-theme="light"] .ambient-glow {
+  opacity: 0.22;
+}
+
+[data-theme="light"] .site-header {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+[data-theme="light"] .hologram-card,
+[data-theme="light"] .hero-stats,
+[data-theme="light"] .glass-panel {
+  box-shadow: 0 4px 20px -6px rgba(15, 23, 42, 0.12);
+}
+
+/* Accents hardcoded for the dark hero/card palette need the same step-down */
+[data-theme="light"] .orbit-1,
+[data-theme="light"] .cert-badge-ribbon {
+  color: var(--accent-amber);
+}
+
+[data-theme="light"] .orbit-2 {
+  color: #0369a1;
+}
+
+[data-theme="light"] .orbit-3 {
+  color: var(--accent-emerald);
+}
+
+[data-theme="light"] .form-feedback.error {
+  color: #dc2626;
 }
 
 /* Reset & Base Setup */
@@ -88,9 +161,74 @@
 
 html {
   scroll-behavior: smooth;
+  /* Keeps anchored sections clear of the fixed header */
+  scroll-padding-top: 5.5rem;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Skip Link (keyboard users only) */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 4000;
+  background: var(--primary);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Small bold label sitting directly on a solid fill: --primary (#8b5cf6) only
+   reaches 4.23:1 against white text, so use the darker step in both themes */
+.skip-link,
+.filter-btn.active {
+  background: #6d28d9;
+}
+
+.filter-btn.active {
+  border-color: #6d28d9;
+  box-shadow: 0 4px 12px rgba(109, 40, 217, 0.35);
+}
+
+main:focus {
+  outline: none;
+}
+
+/* Visible focus ring for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--secondary-light);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.input-wrapper input:focus-visible,
+.input-wrapper textarea:focus-visible {
+  outline: none;
 }
 
 body {
@@ -257,7 +395,7 @@ body {
 }
 
 .btn-primary {
-  background: var(--gradient-brand);
+  background: var(--gradient-btn);
   color: #ffffff;
   box-shadow: 0 4px 16px rgba(139, 92, 246, 0.35);
 }
@@ -331,10 +469,6 @@ body {
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
   transition: background var(--transition-normal), border-color var(--transition-normal);
-}
-
-[data-theme="light"] .site-header {
-  background: rgba(248, 250, 252, 0.8);
 }
 
 .header-container {
@@ -579,14 +713,20 @@ body {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  /* minmax(0, 1fr) prevents grid items with wide content from blowing out the track */
+  grid-template-columns: minmax(0, 1fr);
   gap: 3.5rem;
   align-items: center;
 }
 
+.hero-content,
+.hero-visual {
+  min-width: 0;
+}
+
 @media (min-width: 960px) {
   .hero-grid {
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   }
 }
 
@@ -602,6 +742,7 @@ body {
   font-size: 0.825rem;
   font-weight: 600;
   margin-bottom: 1.25rem;
+  max-width: 100%;
 }
 
 .status-dot {
@@ -678,7 +819,8 @@ body {
 .hero-stats {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  flex-wrap: wrap;
+  gap: 1.25rem;
   padding: 1.25rem 1.5rem;
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
@@ -689,6 +831,7 @@ body {
 .stat-card {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .stat-number {
@@ -920,13 +1063,13 @@ body {
    ========================================================================== */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 2rem;
 }
 
 @media (min-width: 992px) {
   .about-grid {
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   }
 }
 
@@ -1104,13 +1247,13 @@ body {
 /* Hobbies Grid */
 .hobbies-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.85rem;
 }
 
 @media (min-width: 480px) {
   .hobbies-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -1126,6 +1269,14 @@ body {
   font-weight: 500;
   color: var(--text-secondary);
   transition: all var(--transition-fast);
+  /* Without this the label's min-content width pushes the whole grid wider
+     than the viewport inside the narrow about-side column */
+  min-width: 0;
+}
+
+.hobby-item > span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .hobby-item:hover {
@@ -1136,6 +1287,7 @@ body {
 
 .hobby-icon {
   font-size: 1.1rem;
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
@@ -1168,15 +1320,13 @@ body {
 }
 
 .filter-btn.active {
-  background: var(--primary);
   color: #ffffff;
-  border-color: var(--primary);
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  /* min() keeps the track from exceeding the container on very narrow screens */
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
   gap: 1.75rem;
 }
 
@@ -1190,6 +1340,7 @@ body {
   transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
+  min-width: 0;
 }
 
 .skill-card:hover {
@@ -1201,6 +1352,10 @@ body {
 .skill-card.featured-skill {
   border-color: rgba(245, 158, 11, 0.4);
   background: linear-gradient(180deg, rgba(245, 158, 11, 0.04) 0%, var(--bg-surface) 100%);
+}
+
+.skill-card.is-hidden {
+  display: none;
 }
 
 .skill-badge-label {
@@ -1282,6 +1437,190 @@ body {
 }
 
 /* ==========================================================================
+   PROJECTS SECTION
+   ========================================================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 1.75rem;
+}
+
+.project-card {
+  padding: 2rem 1.85rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--gradient-brand);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-color-hover);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.project-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.project-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-color);
+  color: var(--secondary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.project-icon-box.pega-gradient {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(139, 92, 246, 0.2));
+  color: var(--accent-amber);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.project-type {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--secondary-light);
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  text-align: right;
+}
+
+.project-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.project-desc {
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.15rem;
+}
+
+.project-points {
+  list-style: none;
+  margin-bottom: 1.4rem;
+  flex-grow: 1;
+}
+
+.project-points li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.project-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.project-points code {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.05rem 0.3rem;
+  color: var(--secondary-light);
+}
+
+.project-stack {
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   SOCIAL LINKS
+   ========================================================================== */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.social-links:empty {
+  display: none;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.social-btn:hover {
+  color: var(--primary-light);
+  border-color: var(--border-color-hover);
+  background: rgba(139, 92, 246, 0.12);
+  transform: translateY(-2px);
+}
+
+.social-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-social {
+  margin-top: 1rem;
+}
+
+.hero-social {
+  margin-top: -1.25rem;
+  margin-bottom: 2.75rem;
+}
+
+/* ==========================================================================
    CERTIFICATIONS SECTION
    ========================================================================== */
 .certs-grid {
@@ -1346,23 +1685,24 @@ body {
   flex-shrink: 0;
 }
 
+/* Logo tiles paint white initials, so every stop must clear 4.5:1 in both themes */
 .pega-logo-bg {
-  background: linear-gradient(135deg, #f59e0b, #b45309);
+  background: linear-gradient(135deg, #b45309, #92400e);
   color: #ffffff;
 }
 
 .ai-logo-bg {
-  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  background: linear-gradient(135deg, #7c3aed, #4c1d95);
   color: #ffffff;
 }
 
 .cisco-logo-bg {
-  background: linear-gradient(135deg, #06b6d4, #0e7490);
+  background: linear-gradient(135deg, #0e7490, #155e75);
   color: #ffffff;
 }
 
 .net-logo-bg {
-  background: linear-gradient(135deg, #10b981, #047857);
+  background: linear-gradient(135deg, #047857, #065f46);
   color: #ffffff;
 }
 
@@ -1663,13 +2003,13 @@ body {
    ========================================================================== */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 2.5rem;
 }
 
 @media (min-width: 960px) {
   .contact-grid {
-    grid-template-columns: 0.95fr 1.05fr;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   }
 }
 
@@ -1921,12 +2261,21 @@ body {
   padding: 1.5rem;
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+  /* visibility flips instantly on open, and only after the fade on close,
+     so the dialog is focusable the instant it appears */
+  transition: opacity var(--transition-normal), visibility 0s linear var(--transition-slow);
+}
+
+/* The [hidden] attribute must win over the display:flex above, otherwise the
+   closed dialog stays in the tab order and the accessibility tree */
+.modal-backdrop[hidden] {
+  display: none;
 }
 
 .modal-backdrop.open {
   opacity: 1;
   visibility: visible;
+  transition: opacity var(--transition-normal), visibility 0s linear 0s;
 }
 
 .modal-container {

@@ -1,0 +1,7 @@
+# robots.txt for Madhu Kiran Manikala - Portfolio
+# REPLACE example.com with your real deployed domain before publishing.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://example.com/sitemap.xml
